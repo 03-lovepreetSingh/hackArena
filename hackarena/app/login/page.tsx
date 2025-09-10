@@ -1,132 +1,73 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Chrome, Apple, Twitter, MessageCircle } from "lucide-react";
-
-export default function LoginPage() {
+import React from 'react'
+import { HackXLogo } from './HackXLogo'
+import { SocialLoginButton } from './SocialLoginButton'
+import { WalletLoginButton } from './WalletLoginButton'
+export default function LoginScreen() {
   return (
-    <div className="min-h-screen flex">
-      {/* Left side - Login form */}
-      <div className="flex-1 bg-neutral-900 flex flex-col justify-center px-8 lg:px-16">
-        <div className="max-w-md mx-auto w-full">
-          <div className="flex items-center gap-3 mb-12">
-            <Image src="/logo.png" alt="HackX" width={32} height={32} />
-            <span className="text-white text-xl font-semibold">HackX</span>
-          </div>
-
-          <div className="space-y-8">
-            <div>
-              <h1 className="text-4xl font-bold text-white mb-4">Welcome!</h1>
-              <p className="text-neutral-400 text-lg leading-relaxed">
-                Hack X is a place to take part in a hackathon,
-                <br />
-                create and manage one or to judge one.
-                <br />
-                Become a part of HackX community
-              </p>
+    <div className="flex flex-col md:flex-row w-full min-h-screen bg-[#0f1011]">
+      {/* Left Column - Login Form */}
+      <div className="w-full md:w-2/5 flex flex-col items-center justify-between p-8 md:p-12">
+        <div className="w-full max-w-md flex flex-col items-center">
+          {/* Logo */}
+          <header className="mb-8">
+            <HackXLogo />
+          </header>
+          {/* Welcome Text */}
+          <h1 className="text-2xl font-bold text-white mb-4">Welcome!</h1>
+          {/* Description */}
+          <p className="text-[#949fa8] text-center mb-8 text-sm">
+            Hack X is a place to take part in a hackathon, create and manage one
+            or to judge one. Become a part of HackX community
+          </p>
+          {/* Login Form */}
+          <form className="w-full">
+            {/* Email Input */}
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full bg-[#0f1011] border border-[#1b1b1e] rounded-md p-4 mb-4 text-white focus:outline-none focus:border-[#0092ff]"
+            />
+            {/* Social Login Buttons */}
+            <div className="grid grid-cols-4 gap-2 mb-6">
+              <SocialLoginButton provider="google" />
+              <SocialLoginButton provider="apple" />
+              <SocialLoginButton provider="x" />
+              <SocialLoginButton provider="discord" />
             </div>
-
-            <div className="space-y-4">
-              <Input
-                type="email"
-                placeholder="Email"
-                className="bg-neutral-800 border-neutral-700 text-white placeholder:text-neutral-500 h-12"
-              />
-
-              <div className="grid grid-cols-4 gap-3">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-neutral-800 border-neutral-700 hover:bg-neutral-700"
-                >
-                  <Chrome className="w-5 h-5" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-neutral-800 border-neutral-700 hover:bg-neutral-700"
-                >
-                  <Apple className="w-5 h-5" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-neutral-800 border-neutral-700 hover:bg-neutral-700"
-                >
-                  <Twitter className="w-5 h-5" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-neutral-800 border-neutral-700 hover:bg-neutral-700"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                </Button>
-              </div>
-
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-neutral-700" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-neutral-900 text-neutral-400">
-                    OR
-                  </span>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <Button
-                  variant="outline"
-                  className="w-full bg-neutral-800 border-neutral-700 hover:bg-neutral-700 text-white h-12"
-                >
-                  Metamask Wallet
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full bg-neutral-800 border-neutral-700 hover:bg-neutral-700 text-white h-12"
-                >
-                  WalletConnect
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full bg-neutral-800 border-neutral-700 hover:bg-neutral-700 text-white h-12"
-                >
-                  Coinbase Wallet
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full bg-neutral-800 border-neutral-700 hover:bg-neutral-700 text-white h-12"
-                >
-                  Metamask Wallet
-                </Button>
-              </div>
+            {/* Divider */}
+            <div className="flex items-center justify-center mb-6">
+              <div className="flex-grow h-px bg-[#1b1b1e]"></div>
+              <span className="px-4 text-xs text-[#949fa8]">OR</span>
+              <div className="flex-grow h-px bg-[#1b1b1e]"></div>
             </div>
-          </div>
-
-          <div className="mt-16 flex gap-6 text-sm text-neutral-500">
-            <a href="#" className="hover:text-neutral-400">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-neutral-400">
-              Terms of use
-            </a>
-            <div className="ml-auto">x.com</div>
-          </div>
+            {/* Wallet Login Buttons */}
+            <div className="flex flex-col gap-3 mb-8">
+              <WalletLoginButton provider="metamask" />
+              <WalletLoginButton provider="walletconnect" />
+              <WalletLoginButton provider="coinbase" />
+            </div>
+          </form>
         </div>
+        {/* Footer Links */}
+        <footer className="w-full flex justify-between text-xs text-[#949fa8] mt-4">
+          <a href="#" className="hover:underline">
+            Privacy Policy
+          </a>
+          <a href="#" className="hover:underline">
+            Terms of use
+          </a>
+          <a href="#" className="hover:underline">
+            x.com
+          </a>
+        </footer>
       </div>
-
-      {/* Right side - Image */}
-      <div className="hidden lg:block flex-1">
-        <div className="h-full bg-gradient-to-br from-orange-400 to-orange-600 relative overflow-hidden">
-          <Image
-            src="/placeholder-r15hy.png"
-            alt="Developers working"
-            fill
-            className="object-cover"
-          />
-        </div>
-      </div>
+      {/* Right Column - Image */}
+      <div
+        className="w-full md:w-3/5 bg-cover bg-center min-h-[300px] md:min-h-screen"
+        style={{
+          backgroundImage: `url(https://mirrorful-production.s3.us-west-1.amazonaws.com/patterns/files/478b54ee-e10e-4dfc-81b8-0263aa8908ab/figma-preview.jpg)`,
+        }}
+      ></div>
     </div>
-  );
+  )
 }
