@@ -1,30 +1,44 @@
-"use client"
-
-import { AdminSidebar } from "@/components/admin-sidebar"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Users, Copy } from "lucide-react"
-import { useState } from "react"
+"use client";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Users, Copy } from "lucide-react";
+import { useState } from "react";
 
 interface Judge {
-  id: string
-  email: string
-  role: string
-  status: "confirmed" | "pending"
+  id: string;
+  email: string;
+  role: string;
+  status: "confirmed" | "pending";
 }
 
 export default function JudgesPage({ params }: { params: { id: string } }) {
   const [judges, setJudges] = useState<Judge[]>([
     { id: "1", email: "user@example.com", role: "Judge", status: "confirmed" },
-    { id: "2", email: "judgemail@exampl.com", role: "Judge", status: "confirmed" },
-    { id: "3", email: "usernameemail@domain.com", role: "Judge", status: "pending" },
-  ])
-  const [inviteEmail, setInviteEmail] = useState("")
+    {
+      id: "2",
+      email: "judgemail@exampl.com",
+      role: "Judge",
+      status: "confirmed",
+    },
+    {
+      id: "3",
+      email: "usernameemail@domain.com",
+      role: "Judge",
+      status: "pending",
+    },
+  ]);
+  const [inviteEmail, setInviteEmail] = useState("");
 
-  const inviteLink = "https://hackx.com/invite/aoiduh...123fnf"
+  const inviteLink = "https://hackx.com/invite/aoiduh...123fnf";
 
   const sendInvite = () => {
     if (inviteEmail) {
@@ -33,19 +47,18 @@ export default function JudgesPage({ params }: { params: { id: string } }) {
         email: inviteEmail,
         role: "Judge",
         status: "pending",
-      }
-      setJudges([...judges, newJudge])
-      setInviteEmail("")
+      };
+      setJudges([...judges, newJudge]);
+      setInviteEmail("");
     }
-  }
+  };
 
   const copyInviteLink = () => {
-    navigator.clipboard.writeText(inviteLink)
-  }
+    navigator.clipboard.writeText(inviteLink);
+  };
 
   return (
     <div className="flex">
-      <AdminSidebar activeTab="judges" hackathonId={params.id} />
       <main className="flex-1 p-6 md:ml-0">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -53,15 +66,17 @@ export default function JudgesPage({ params }: { params: { id: string } }) {
             <div className="lg:col-span-2 space-y-6">
               {judges.length === 0 ? (
                 <div className="text-center py-12">
-                  <Users className="h-16 w-16 mx-auto text-gray-600 mb-4" />
-                  <p className="text-gray-400 text-lg">No judges invited yet</p>
+                  <Users className="h-16 w-16 mx-auto text-neutral-600 mb-4" />
+                  <p className="text-neutral-400 text-lg">
+                    No judges invited yet
+                  </p>
                 </div>
               ) : (
                 <div className="space-y-4">
                   {judges.map((judge) => (
                     <div
                       key={judge.id}
-                      className="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700"
+                      className="flex items-center justify-between p-4 bg-neutral-800/50 rounded-lg border border-neutral-700"
                     >
                       <div className="flex items-center space-x-3">
                         <Avatar className="bg-blue-600">
@@ -73,16 +88,22 @@ export default function JudgesPage({ params }: { params: { id: string } }) {
                       </div>
                       <div className="flex items-center space-x-3">
                         <Select value={judge.role}>
-                          <SelectTrigger className="w-32 bg-gray-800 border-gray-700">
+                          <SelectTrigger className="w-32 bg-neutral-800 border-neutral-700">
                             <SelectValue />
                           </SelectTrigger>
-                          <SelectContent className="bg-gray-800 border-gray-700">
+                          <SelectContent className="bg-neutral-800 border-neutral-700">
                             <SelectItem value="Judge">Judge</SelectItem>
-                            <SelectItem value="Lead Judge">Lead Judge</SelectItem>
+                            <SelectItem value="Lead Judge">
+                              Lead Judge
+                            </SelectItem>
                             <SelectItem value="Observer">Observer</SelectItem>
                           </SelectContent>
                         </Select>
-                        {judge.status === "pending" && <span className="text-sm text-yellow-400">Invite pending</span>}
+                        {judge.status === "pending" && (
+                          <span className="text-sm text-yellow-400">
+                            Invite pending
+                          </span>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -92,14 +113,20 @@ export default function JudgesPage({ params }: { params: { id: string } }) {
 
             {/* Invite Section */}
             <div className="space-y-6">
-              <div className="bg-gray-800/50 rounded-lg border border-gray-700 p-6">
-                <h3 className="text-lg font-semibold mb-2">Invite to judge hackathon</h3>
-                <p className="text-gray-400 text-sm mb-6">Invite judges via invite link or email</p>
+              <div className="bg-neutral-800/50 rounded-lg border border-neutral-700 p-6">
+                <h3 className="text-lg font-semibold mb-2">
+                  Invite to judge hackathon
+                </h3>
+                <p className="text-neutral-400 text-sm mb-6">
+                  Invite judges via invite link or email
+                </p>
 
                 {/* Invite Link */}
                 <div className="space-y-4 mb-6">
-                  <div className="flex items-center space-x-2 p-3 bg-gray-800 rounded border border-gray-700">
-                    <span className="text-sm text-gray-400 flex-1 truncate">{inviteLink}</span>
+                  <div className="flex items-center space-x-2 p-3 bg-neutral-800 rounded border border-neutral-700">
+                    <span className="text-sm text-neutral-400 flex-1 truncate">
+                      {inviteLink}
+                    </span>
                     <Button
                       variant="ghost"
                       size="sm"
@@ -112,12 +139,17 @@ export default function JudgesPage({ params }: { params: { id: string } }) {
                   </div>
                 </div>
 
-                <div className="text-center text-gray-400 text-sm mb-4">or</div>
+                <div className="text-center text-neutral-400 text-sm mb-4">
+                  or
+                </div>
 
                 {/* Email Invite */}
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="invite-email" className="text-sm text-gray-400">
+                    <Label
+                      htmlFor="invite-email"
+                      className="text-sm text-neutral-400"
+                    >
                       Enter Email
                     </Label>
                     <Input
@@ -125,7 +157,7 @@ export default function JudgesPage({ params }: { params: { id: string } }) {
                       type="email"
                       value={inviteEmail}
                       onChange={(e) => setInviteEmail(e.target.value)}
-                      className="bg-gray-800 border-gray-700 mt-1"
+                      className="bg-neutral-800 border-neutral-700 mt-1"
                       onKeyPress={(e) => e.key === "Enter" && sendInvite()}
                     />
                   </div>
@@ -143,5 +175,5 @@ export default function JudgesPage({ params }: { params: { id: string } }) {
         </div>
       </main>
     </div>
-  )
+  );
 }

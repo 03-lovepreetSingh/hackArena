@@ -1,23 +1,26 @@
-import type React from "react"
-import { AdminSidebar } from "@/components/admin-sidebar"
-import { Button } from "@/components/ui/button"
-import { X } from "lucide-react"
-import Link from "next/link"
+import type React from "react";
+import { AdminSidebar } from "@/components/admin-sidebar";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
+import Link from "next/link";
 
 export default function AdminLayout({
   children,
   params,
 }: {
-  children: React.ReactNode
-  params: { id: string }
+  children: React.ReactNode;
+  params: { id: string };
 }) {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-neutral-900 text-white">
       {/* Header */}
-      <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur">
+      <header className="border-b border-neutral-800 bg-neutral-900/95 backdrop-blur">
         <div className="flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-4">
-            <Link href="/" className="flex items-center space-x-2 text-gray-400 hover:text-white">
+            <Link
+              href="/"
+              className="flex items-center space-x-2 text-neutral-400 hover:text-white"
+            >
               <X className="h-4 w-4" />
               <span className="text-sm">Save hackathon draft & quit</span>
             </Link>
@@ -32,15 +35,16 @@ export default function AdminLayout({
             >
               Preview publication
             </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700">Publish Hackathon</Button>
+            <Button className="bg-blue-600 hover:bg-blue-700">
+              Publish Hackathon
+            </Button>
           </div>
         </div>
       </header>
-
+      <AdminSidebar activeTab="" hackathonId={params.id} />
       <div className="flex">
-        <AdminSidebar activeTab="" hackathonId={params.id} />
         <main className="flex-1 md:ml-0 ml-0">{children}</main>
       </div>
     </div>
-  )
+  );
 }

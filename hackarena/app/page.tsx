@@ -1,10 +1,10 @@
-import { HackathonCard } from "@/components/hackathon-card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Search, Bell } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import ResponsiveSidebar from "@/components/responsive-sidebar"
+import { HackathonCard } from "@/components/hackathon-card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Search, Bell } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import ResponsiveSidebar from "@/components/responsive-sidebar";
 
 const hackathons = [
   {
@@ -63,7 +63,7 @@ const hackathons = [
     participants: 405,
     image: "/digital-identity-green-banner.jpg",
   },
-]
+];
 
 const pastHackathons = [
   {
@@ -94,7 +94,7 @@ const pastHackathons = [
     participants: 400,
     image: "/metamask-gaming-banner.jpg",
   },
-]
+];
 
 export default function HomePage() {
   const sidebarItems = [
@@ -109,12 +109,12 @@ export default function HomePage() {
     { href: "#", label: "Discussion & Support", icon: "💬" },
     { href: "#", label: "Advocate Program", icon: "🥇" },
     { href: "#", label: "More", icon: "➕" },
-  ]
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-neutral-900 text-white">
       {/* Header */}
-      <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60">
+      <header className="border-b border-neutral-800 bg-neutral-900/95 backdrop-blur supports-[backdrop-filter]:bg-neutral-900/60">
         <div className="flex h-16 items-center px-4 md:px-6">
           <Link href="/" className="flex items-center space-x-2">
             <Image src="/logo.png" alt="Logo" width={32} height={32} />
@@ -122,10 +122,10 @@ export default function HomePage() {
 
           <div className="flex-1 max-w-2xl mx-4 md:mx-8">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" />
               <Input
                 placeholder="Search for researches and audits on HackX"
-                className="pl-10 bg-gray-800 border-gray-700 text-white placeholder:text-gray-400"
+                className="pl-10 bg-neutral-800 border-neutral-700 text-white placeholder:text-neutral-400"
               />
             </div>
           </div>
@@ -134,7 +134,11 @@ export default function HomePage() {
             <Button variant="ghost" size="icon">
               <Bell className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="bg-orange-600 hover:bg-orange-700">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="bg-orange-600 hover:bg-orange-700"
+            >
               <span className="text-sm font-medium">C</span>
             </Button>
           </div>
@@ -142,15 +146,15 @@ export default function HomePage() {
       </header>
 
       <div className="flex">
-        <ResponsiveSidebar items={sidebarItems} />
-
         {/* Main Content */}
         <main className="flex-1 p-4 md:p-6 md:ml-0">
           {/* Featured Banner */}
           <div className="mb-8 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white relative overflow-hidden">
             <div className="relative z-10">
               <div className="flex items-center space-x-2 mb-2">
-                <span className="bg-white/20 px-2 py-1 rounded text-xs">Featured</span>
+                <span className="bg-white/20 px-2 py-1 rounded text-xs">
+                  Featured
+                </span>
               </div>
               <h2 className="text-2xl font-bold mb-2">Open Source Frontier</h2>
               <p className="text-lg mb-4">AI x WEB3 x Transparency</p>
@@ -172,7 +176,9 @@ export default function HomePage() {
                   <div className="font-semibold">50,000.00 USD</div>
                 </div>
               </div>
-              <Button className="bg-white text-blue-600 hover:bg-gray-100">Start Register →</Button>
+              <Button className="bg-white text-blue-600 hover:bg-neutral-100">
+                Start Register →
+              </Button>
             </div>
             <div className="absolute right-0 top-0 h-full w-1/3 opacity-20">
               <div className="h-full w-full bg-gradient-to-l from-white/10 to-transparent"></div>
@@ -184,38 +190,57 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 space-y-4 sm:space-y-0">
               <h2 className="text-2xl font-bold">Explore Hackathons</h2>
               <Link href="/admin/hackathon/new/overview">
-                <Button className="bg-blue-600 hover:bg-blue-700">Host a Hackathon</Button>
+                <Button className="bg-blue-600 hover:bg-blue-700">
+                  Host a Hackathon
+                </Button>
               </Link>
             </div>
 
-            <p className="text-gray-400 mb-6">
-              Welcome to your hackathon dashboard! Manage projects, invite teammates, and track your hackathon journey
-              with ease — all in one place.
+            <p className="text-neutral-400 mb-6">
+              Welcome to your hackathon dashboard! Manage projects, invite
+              teammates, and track your hackathon journey with ease — all in one
+              place.
             </p>
 
             {/* Filters */}
             <div className="flex items-center space-x-4 mb-6">
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-400">Total Prize</span>
-                <Button variant="outline" size="sm" className="border-gray-700 text-gray-300 bg-transparent">
+                <span className="text-sm text-neutral-400">Total Prize</span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-neutral-700 text-neutral-300 bg-transparent"
+                >
                   All ↓
                 </Button>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-400">Ecosystem</span>
-                <Button variant="outline" size="sm" className="border-gray-700 text-gray-300 bg-transparent">
+                <span className="text-sm text-neutral-400">Ecosystem</span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-neutral-700 text-neutral-300 bg-transparent"
+                >
                   All ↓
                 </Button>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-400">Tech Stack</span>
-                <Button variant="outline" size="sm" className="border-gray-700 text-gray-300 bg-transparent">
+                <span className="text-sm text-neutral-400">Tech Stack</span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-neutral-700 text-neutral-300 bg-transparent"
+                >
                   All ↓
                 </Button>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-400">Status</span>
-                <Button variant="outline" size="sm" className="border-gray-700 text-gray-300 bg-transparent">
+                <span className="text-sm text-neutral-400">Status</span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-neutral-700 text-neutral-300 bg-transparent"
+                >
                   Live, Upcoming ↓
                 </Button>
               </div>
@@ -241,5 +266,5 @@ export default function HomePage() {
         </main>
       </div>
     </div>
-  )
+  );
 }
