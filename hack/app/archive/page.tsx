@@ -1,4 +1,4 @@
-import { ArchivePage } from "../../src/pages/ArchivePage"
+import { ArchivePage } from "../../components/pages/ArchivePage"
 
 export default function ArchivePageRoute() {
   return <ArchivePage />

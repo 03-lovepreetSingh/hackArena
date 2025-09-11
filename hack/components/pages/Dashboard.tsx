@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { Sidebar } from "../components/Sidebar";
-import { Header } from "../components/Header";
-import { ActiveProjects } from "../components/ActiveProjects";
-import { RegisteredHackathons } from "../components/RegisteredHackathons";
-import { OpenVoting } from "../components/OpenVoting";
+import { Sidebar } from "../Sidebar";
+import { Header } from "../Header";
+import { ActiveProjects } from "../ActiveProjects";
+import { RegisteredHackathons } from "../RegisteredHackathons";
+import { OpenVoting } from "../OpenVoting";
 export const Dashboard = () => {
   return (
     <div className="flex min-h-screen bg-[#1b1b1e] text-white">

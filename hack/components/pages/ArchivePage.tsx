@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
-import { Sidebar } from "../components/Sidebar";
-import { Header } from "../components/Header";
-import { CampsList } from "../components/camps/CampsList";
-export const CampsPage = () => {
+import { Sidebar } from "../Sidebar";
+import { Header } from "../Header";
+import { ProjectFilters } from "../archive/ProjectFilters";
+import { ArchivedProjects } from "../archive/ArchivedProjects";
+export const ArchivePage = () => {
   return (
     <div className="flex min-h-screen bg-[#1b1b1e] text-white">
       <Sidebar />
@@ -11,7 +12,8 @@ export const CampsPage = () => {
         <div className="px-8 py-4">
           <Header />
           <div className="mt-6 space-y-10">
-            <CampsList />
+            <ProjectFilters />
+            <ArchivedProjects />
           </div>
         </div>
       </main>

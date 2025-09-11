@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { Sidebar } from "../components/Sidebar";
-import { Header } from "../components/Header";
-import { EventsList } from "../components/events/EventsList";
-export const EventsPage = () => {
+import { Sidebar } from "../Sidebar";
+import { Header } from "../Header";
+import { AdvocateProgram } from "../advocate/AdvocateProgram";
+export const AdvocatePage = () => {
   return (
     <div className="flex min-h-screen bg-[#1b1b1e] text-white">
       <Sidebar />
@@ -11,7 +11,7 @@ export const EventsPage = () => {
         <div className="px-8 py-4">
           <Header />
           <div className="mt-6 space-y-10">
-            <EventsList />
+            <AdvocateProgram />
           </div>
         </div>
       </main>

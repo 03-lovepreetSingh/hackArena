@@ -1,4 +1,4 @@
-import { AdvocatePage } from "../../src/pages/AdvocatePage"
+import { AdvocatePage } from "../../components/pages/AdvocatePage"
 
 export default function AdvocatePageRoute() {
   return <AdvocatePage />

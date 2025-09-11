@@ -1,4 +1,4 @@
-import { SupportPage } from "../../src/pages/SupportPage"
+import { SupportPage } from "../../components/pages/SupportPage"
 
 export default function SupportPageRoute() {
   return <SupportPage />

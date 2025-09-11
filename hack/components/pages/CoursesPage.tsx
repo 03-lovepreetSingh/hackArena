@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { Sidebar } from "../components/Sidebar";
-import { Header } from "../components/Header";
-import { FeaturedCourses } from "../components/courses/FeaturedCourses";
-import { CourseCategories } from "../components/courses/CourseCategories";
-import { CourseList } from "../components/courses/CourseList";
+import { Sidebar } from "../Sidebar";
+import { Header } from "../Header";
+import { FeaturedCourses } from "../courses/FeaturedCourses";
+import { CourseCategories } from "../courses/CourseCategories";
+import { CourseList } from "../courses/CourseList";
 export const CoursesPage = () => {
   return (
     <div className="flex min-h-screen bg-[#1b1b1e] text-white">

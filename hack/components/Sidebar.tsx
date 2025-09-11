@@ -1,10 +1,22 @@
-"use client"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { X, Home, Award, Archive, Calendar, MessageSquare, BookOpen, Users, MoreHorizontal } from "lucide-react"
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  X,
+  Home,
+  Award,
+  Archive,
+  Calendar,
+  MessageSquare,
+  BookOpen,
+  Users,
+  MoreHorizontal,
+} from "lucide-react";
 
 export const Sidebar = () => {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const navItems = [
     {
@@ -62,23 +74,26 @@ export const Sidebar = () => {
       icon: <MoreHorizontal className="h-4 w-4 mr-2" />,
       path: "/more",
     },
-  ]
+  ];
 
   const isActive = (path: string) => {
     if (path === "/") {
-      return pathname === "/"
+      return pathname === "/";
     }
-    return pathname.startsWith(path)
-  }
+    return pathname?.startsWith(path);
+  };
 
   return (
     <aside className="w-64 bg-[#16161b] border-r border-[#2a2a2e] h-screen sticky top-0 hidden md:block">
       <div className="p-4">
+        {/* Logo / Close */}
         <div className="flex items-center mb-6">
           <Link href="/">
             <X className="h-6 w-6 text-[#0092ff]" />
           </Link>
         </div>
+
+        {/* Search */}
         <div className="relative">
           <input
             type="text"
@@ -86,6 +101,8 @@ export const Sidebar = () => {
             className="w-full bg-[#1b1b1e] text-[#949fa8] text-sm py-2 px-4 rounded-md focus:outline-none focus:ring-1 focus:ring-[#0092ff]"
           />
         </div>
+
+        {/* Navigation */}
         <nav className="mt-6">
           <ul className="space-y-2">
             {navItems.map((item, index) => (
@@ -105,5 +122,5 @@ export const Sidebar = () => {
         </nav>
       </div>
     </aside>
-  )
-}
+  );
+};

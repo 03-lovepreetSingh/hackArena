@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, Share } from "lucide-react";
 
 // Your local components
-import { Overview } from "../components/hackathon/Overview";
-import { PrizeAndJudge } from "../components/hackathon/PrizeAndJudge";
-import { Schedule } from "../components/hackathon/Schedule";
-import { SubmittedProjects } from "../components/hackathon/SubmittedProjects";
-import { RegistrationModal } from "../components/hackathon/RegistrationModal";
-import { HackathonSidebar } from "../components/hackathon/HackathonSidebar";
+import { Overview } from "../hackathon/Overview";
+import { PrizeAndJudge } from "../hackathon/PrizeAndJudge";
+import { Schedule } from "../hackathon/Schedule";
+import { SubmittedProjects } from "../hackathon/SubmittedProjects";
+import { RegistrationModal } from "../hackathon/RegistrationModal";
+import { HackathonSidebar } from "../hackathon/HackathonSidebar";
 
 export const HackathonDetail = () => {
   const [activeTab, setActiveTab] = useState("overview");

@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { Sidebar } from "../components/Sidebar";
-import { Header } from "../components/Header";
-import { CertificationsList } from "../components/certifications/CertificationsList";
-export const CertificationsPage = () => {
+import { Sidebar } from "../Sidebar";
+import { Header } from "../Header";
+import { DiscussionBoard } from "../support/DiscussionBoard";
+export const SupportPage = () => {
   return (
     <div className="flex min-h-screen bg-[#1b1b1e] text-white">
       <Sidebar />
@@ -11,7 +11,7 @@ export const CertificationsPage = () => {
         <div className="px-8 py-4">
           <Header />
           <div className="mt-6 space-y-10">
-            <CertificationsList />
+            <DiscussionBoard />
           </div>
         </div>
       </main>

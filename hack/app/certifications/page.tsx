@@ -1,4 +1,4 @@
-import { CertificationsPage } from "../../src/pages/CertificationsPage"
+import { CertificationsPage } from "../../components/pages/CertificationsPage"
 
 export default function CertificationsPageRoute() {
   return <CertificationsPage />

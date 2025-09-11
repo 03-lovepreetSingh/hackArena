@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { Sidebar } from "../components/Sidebar";
-import { Header } from "../components/Header";
-import { QuestList } from "../components/quest/QuestList";
-import { QuestRewards } from "../components/quest/QuestRewards";
-import { QuestProgress } from "../components/quest/QuestProgress";
+import { Sidebar } from "../Sidebar";
+import { Header } from "../Header";
+import { QuestList } from "../quest/QuestList";
+import { QuestRewards } from "../quest/QuestRewards";
+import { QuestProgress } from "../quest/QuestProgress";
 export const QuestPage = () => {
   return (
     <div className="flex min-h-screen bg-[#1b1b1e] text-white">

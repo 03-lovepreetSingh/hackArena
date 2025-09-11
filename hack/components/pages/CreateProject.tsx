@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ProjectOverview } from '../components/project/ProjectOverview';
-import { TechStackSelection } from '../components/project/TechStackSelection';
-import { HackathonSubmission } from '../components/project/HackathonSubmission';
-import { ProjectSidebar } from '../components/project/ProjectSidebar';
+import { ProjectOverview } from '../project/ProjectOverview';
+import { TechStackSelection } from '../project/TechStackSelection';
+import { HackathonSubmission } from '../project/HackathonSubmission';
+import { ProjectSidebar } from '../project/ProjectSidebar';
 export const CreateProject = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [projectData, setProjectData] = useState({

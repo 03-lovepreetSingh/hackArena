@@ -1,4 +1,4 @@
-import { CreateProject } from "../../src/pages/CreateProject"
+import { CreateProject } from "../../components/pages/CreateProject"
 
 export default function CreateProjectPage() {
   return <CreateProject />

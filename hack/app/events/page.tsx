@@ -1,4 +1,4 @@
-import { EventsPage } from "../../src/pages/EventsPage"
+import { EventsPage } from "../../components/pages/EventsPage"
 
 export default function EventsPageRoute() {
   return <EventsPage />
